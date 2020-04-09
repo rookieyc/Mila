@@ -1,5 +1,23 @@
 # Mila
 
+## List
+1. CONTRACT_CURRENT.sol (大家都會filter this，合約紀錄當前需要filter的CONTRACT_FW address，有新的合約發佈後，大家才知道要filter new contract)
+  - current_fw_address (當前CONTRACT_FW.sol的address)
+  - new_fw_address (新的CONTRACT_FW.sol address)
+  - fix_information (修正合約後，需要告訴其他人的事情 e.g. 修正者是誰，為了什麼問題修正等)
+2. CONTRACT_FW.sol (GW訂閱主題會call this contract)
+  - GW_IP (執行該合約的GW其IP)
+  - GW_ID (GW ID)
+  - MF (欲訂閱的IoT裝置其所屬的製造商)
+  - device (欲訂閱的IoT裝置型號)
+  - qos (Qos)
+3. CONTRACT_LOG.sol (MF發送韌體會call this contract)
+  - MF (執行該合約的MF)
+  - device (此韌體對應的裝置型號)
+  - qos (Qos)
+  - version (此韌體的版本)
+  - digest (韌體雜湊值)
+
 ## To-Do List
 1. contract address stores in files. And read from files.
 2. change contract 10.0.2.15 to physical ip
